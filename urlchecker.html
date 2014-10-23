@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Check 'em</title>
+	<script src="libs/jquery-2.1.1.min.js"></script>
+	<script src="libs/underscore-min.js"></script>
+	<script src="libs/mustache.js"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+	<div class="container-fluid">
+		<h1>Check 'em</h1>
+		<div id="input" class="col-md-12">
+			<p>Paste URLs in the box below - one per line</p>
+			<form id="url-input-form">
+				<textarea rows=15 id="urls"></textarea>
+				<button type="submit" id="url-input-submit" class="btn btn-primary btn-lg">Check 'em</button>
+				<button type="button" id="url-input-cancel" class="btn btn-lg">Clear</button>
+				<button type="button" id="setup-toggle" class="btn btn-large" data-toggle="collapse" data-target="#setup">Setup</button>
+			</form>
+			<div id="setup" class="collapse">
+				<p>Some stuff goes in here</p>
+			</div>
+		</div>
+		<div id="output" class="col-md-12">
+			<div>
+				<h2>Results</h2>
+				<ul id="errors">
+				</ul>
+			</div>
+			<div>
+				<h2>List of URLs</h2>
+				<table id="url-parts" class="table table-striped">
+				</table>
+			</div>
+			<div id="parameter-lists">
+				<h2>Tracking</h2>
+				<div class="col-md-3" id="campaigns-list">
+					<h4>Campaigns</h4>
+					<ul></ul>
+				</div>
+				<div class="col-md-3" id="mediums-list">
+					<h4>Mediums</h4>
+					<ul></ul>
+				</div>
+				<div class="col-md-3" id="sources-list">
+					<h4>Sources</h4>
+					<ul></ul>
+				</div>
+				<div class="col-md-3" id="contents-list">
+					<h4>Contents</h4>
+					<ul></ul>
+				</div>
+
+		</div>
+	</div>
+	<script src="urlchecker.js"></script>	
+</body>
+</html>
