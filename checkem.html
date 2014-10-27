@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
 	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> 
 
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -17,49 +17,78 @@
 </head>
 <body>
 	<div class="container-fluid">
-		<h1>Check 'em</h1>
-		<div id="input" class="col-md-12">
-			<p>Paste URLs in the box below - one per line</p>
-			<form id="url-input-form">
-				<textarea rows=15 id="urls"></textarea>
-				<button type="submit" id="url-input-submit" class="btn btn-primary btn-lg">Check 'em</button>
-				<button type="button" id="url-input-cancel" class="btn btn-lg">Clear</button>
-				<button type="button" id="setup-toggle" class="btn btn-large" data-toggle="collapse" data-target="#setup">Setup</button>
-			</form>
-			<div id="setup" class="collapse">
-				<p>Some stuff goes in here</p>
+		<div class="row">
+			<div id="input" class="col-md-12">
+				<h1>Check 'em</h1>
+				<p>Paste URLs in the box below - one per line</p>
+				<form id="url-input-form">
+					<textarea rows=15 id="urls"></textarea>
+					<button type="submit" id="url-input-submit" class="btn btn-success btn-lg">Check 'em</button>
+					<button type="button" id="url-input-cancel" class="btn btn-lg">Clear</button>
+				</form>
 			</div>
 		</div>
-		<div id="output" class="col-md-12">
-			<div>
-				<h2>Results</h2>
-				<ul id="errors">
-				</ul>
-			</div>
-			<div>
-				<h2>List of URLs</h2>
-				<table id="url-parts" class="table table-striped">
-				</table>
-			</div>
-			<div id="parameter-lists">
-				<h2>Tracking</h2>
-				<div class="col-md-3" id="campaigns-list">
-					<h4>Campaigns</h4>
-					<ul></ul>
-				</div>
-				<div class="col-md-3" id="mediums-list">
-					<h4>Mediums</h4>
-					<ul></ul>
-				</div>
-				<div class="col-md-3" id="sources-list">
-					<h4>Sources</h4>
-					<ul></ul>
-				</div>
-				<div class="col-md-3" id="contents-list">
-					<h4>Contents</h4>
-					<ul></ul>
-				</div>
 
+		<!-- begin setup container row -->
+		<div class="row">
+			<div id="setup-container" class="col-md-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a href="#collapse-setup" data-toggle="collapse" data-target="#setup">Setup - Click to Show of Collapse</a>
+						</h4>
+					</div>
+					<div class="panel-body collapse" id="setup">
+						<form id="setup-form">
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="ga-params" id="ga-params" checked="checked">
+									Uses Standard Google Analytics Parameters
+								</label>
+							</div>
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="dblclick-tracker" id="dblclick-tracker" checked="unchecked">
+									Uses DoubleClick Click-Tracker
+								</label>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end setup container row -->
+
+		<!-- begin output row -->
+		<div class="row" id="output">
+			<div class="col-md-12">
+				<div class="row">
+					<div id="" class="col-md-12">
+						<div>
+							<h2>Summary of Results</h2>
+							<ul id="errors">
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<h2>List of URLs</h2>
+						<table id="url-parts" class="table table-striped">
+						</table>
+					</div>
+				</div>
+				<div class="row">	
+					<div class="col-md-12">
+						<div id="value-lists-holder">
+							<h2>Unique Parameter Values</h2>
+							<div id="value-lists">
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 	<script src="checkem.js"></script>	
